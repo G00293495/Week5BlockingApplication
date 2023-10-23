@@ -2,6 +2,8 @@ package ie.atu.week5.week5blockingapplication;
 
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class FeignService {
 
@@ -22,5 +24,10 @@ public class FeignService {
             e.printStackTrace();
         }
         return td;
+    }
+
+    public List<ToDoResponse> fetchAllData(){
+        return toDoClient.fetchAllData();
+
     }
 }
